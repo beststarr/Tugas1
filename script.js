@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener("DOMContentLoaded", loadTasks);
 
 function addTask() {
@@ -13,12 +15,12 @@ function addTask() {
         return;
     }
 
-    let task = { text: taskText, assignedDate, deadline, completed: false };
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    let task = { text: taskText, assignedDate, deadline, completed: false };
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
 
-    renderTask(task);
+    loadTasks();
     
     taskInput.value = "";
     assignedDateInput.value = "";
@@ -39,7 +41,8 @@ function renderTask(task, index) {
 
 function loadTasks() {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    document.getElementById("taskList").innerHTML = "";
+    let taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
     tasks.forEach((task, index) => renderTask(task, index));
 }
 
