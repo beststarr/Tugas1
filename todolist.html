@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Karyawan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="container">
+            <h1>To-Do List Karyawan</h1>
+            <div class="input-group">
+                <label for="taskInput">Tugas</label>
+                <input type="text" id="taskInput" placeholder="Tambahkan tugas baru">
+            </div>
+            <div class="input-group">
+                <label for="assignedDateInput">Tanggal Diberikan</label>
+                <input type="date" id="assignedDateInput">
+            </div>
+            <div class="input-group">
+                <label for="assignedTimeInput">Jam Diberikan</label>
+                <input type="time" id="assignedTimeInput">
+            </div>
+            <div class="input-group">
+                <label for="deadlineInput">Deadline</label>
+                <input type="date" id="deadlineInput">
+            </div>
+            <div class="input-group">
+                <label for="deadlineTimeInput">Jam Deadline</label>
+                <input type="time" id="deadlineTimeInput">
+            </div>
+            <button onclick="addTask()">Tambah</button>
+        </div>
+
+        <div class="task-container">
+            <ul id="taskList"></ul>
+            <script src="script.js"></script>
+        </div>
+    </div>
+</body>
+
+</html>
